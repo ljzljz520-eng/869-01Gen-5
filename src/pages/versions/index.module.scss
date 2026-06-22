@@ -1,0 +1,134 @@
+@use '@/styles/variables.scss' as *;
+
+.container {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: calc(140rpx + #{env(safe-area-inset-bottom)});
+}
+
+.header {
+  background: $header-gradient;
+  padding: $spacing-lg $spacing-lg $spacing-xl;
+  color: $color-text-white;
+}
+
+.headerTitle {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-sm;
+}
+
+.headerDesc {
+  font-size: $font-size-sm;
+  opacity: 0.85;
+  line-height: $line-height-normal;
+}
+
+.statsRow {
+  display: flex;
+  margin-top: $spacing-lg;
+  gap: $spacing-md;
+}
+
+.statItem {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  backdrop-filter: blur(10px);
+}
+
+.statValue {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  margin-bottom: $spacing-xs;
+}
+
+.statLabel {
+  font-size: $font-size-xs;
+  opacity: 0.85;
+}
+
+.content {
+  margin-top: -$spacing-xl;
+  padding: 0 $spacing-lg;
+}
+
+.createBtn {
+  width: 100%;
+  height: $button-height-lg;
+  background: $color-bg-card;
+  border: 2rpx dashed $color-primary;
+  border-radius: $radius-lg;
+  color: $color-primary;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $spacing-lg;
+  box-shadow: $shadow-card;
+  transition: all $transition-base;
+
+  &:active {
+    transform: scale(0.98);
+    opacity: 0.85;
+  }
+}
+
+.createBtnIcon {
+  font-size: $font-size-xl;
+  margin-right: $spacing-xs;
+  font-weight: $font-weight-bold;
+}
+
+.section {
+  margin-bottom: $spacing-lg;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-md;
+  padding: 0 $spacing-xs;
+}
+
+.sectionTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  display: flex;
+  align-items: center;
+}
+
+.sectionBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36rpx;
+  height: 36rpx;
+  padding: 0 $spacing-xs;
+  border-radius: $radius-round;
+  background: $color-primary-bg;
+  color: $color-primary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  margin-left: $spacing-sm;
+}
+
+.sectionMore {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.emptyWrap {
+  padding: $spacing-xl 0;
+}
+
+.versionList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}

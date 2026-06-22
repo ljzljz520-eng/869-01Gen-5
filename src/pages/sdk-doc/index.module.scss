@@ -1,0 +1,327 @@
+@use '@/styles/variables.scss' as *;
+
+.container {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: $spacing-lg;
+}
+
+.header {
+  background: $header-gradient;
+  padding: $spacing-lg $spacing-lg $spacing-xl;
+  color: $color-text-white;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4rpx $spacing-sm;
+  border-radius: $radius-xs;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: $font-size-xs;
+  margin-bottom: $spacing-md;
+  font-weight: $font-weight-medium;
+}
+
+.title {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-sm;
+}
+
+.desc {
+  font-size: $font-size-sm;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.content {
+  margin-top: -$spacing-xl;
+  padding: 0 $spacing-lg;
+}
+
+.section {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-card;
+  margin-bottom: $spacing-lg;
+}
+
+.sectionTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+  display: flex;
+  align-items: center;
+  padding-bottom: $spacing-md;
+  border-bottom: 2rpx solid $color-divider;
+}
+
+.sectionIcon {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: $radius-sm;
+  background: $color-primary-bg;
+  color: $color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-lg;
+  margin-right: $spacing-sm;
+}
+
+.subTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin: $spacing-md 0 $spacing-sm;
+}
+
+.stepList {
+  counter-reset: stepCounter;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.stepItem {
+  position: relative;
+  padding-left: 80rpx;
+
+  &::before {
+    counter-increment: stepCounter;
+    content: counter(stepCounter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 56rpx;
+    height: 56rpx;
+    border-radius: 50%;
+    background: $color-primary;
+    color: $color-text-white;
+    font-size: $font-size-md;
+    font-weight: $font-weight-bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.stepTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+}
+
+.stepDesc {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: 1.7;
+  margin-bottom: $spacing-sm;
+}
+
+.codeBlock {
+  background: #1D2129;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  margin: $spacing-sm 0;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.codeText {
+  font-family: 'SF Mono', Monaco, Consolas, 'Courier New', monospace;
+  font-size: 22rpx;
+  color: #C9CDD4;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.codeKeyword { color: #4080FF; }
+.codeString { color: #00B42A; }
+.codeNumber { color: #FF7D00; }
+.codeComment { color: #86909C; font-style: italic; }
+.codeFunction { color: #722ED1; }
+.codeType { color: #165DFF; }
+.codeProp { color: #F77234; }
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+}
+
+.featureCard {
+  padding: $spacing-md;
+  background: $color-bg-hover;
+  border-radius: $radius-md;
+  border-left: 6rpx solid $color-primary;
+}
+
+.featureTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.featureDesc {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  line-height: 1.6;
+}
+
+.apiTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-xs;
+}
+
+.tableHead {
+  background: $color-bg-hover;
+}
+
+.tableCell {
+  padding: $spacing-sm;
+  border: 2rpx solid $color-divider;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.tableHeaderCell {
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.tableBodyCell {
+  color: $color-text-secondary;
+}
+
+.tipBox {
+  padding: $spacing-md;
+  background: $color-primary-bg;
+  border-radius: $radius-md;
+  border-left: 6rpx solid $color-primary;
+  margin: $spacing-md 0;
+}
+
+.tipTitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  margin-bottom: $spacing-xs;
+  display: flex;
+  align-items: center;
+}
+
+.tipContent {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  line-height: 1.7;
+}
+
+.warnBox {
+  padding: $spacing-md;
+  background: $color-warning-bg;
+  border-radius: $radius-md;
+  border-left: 6rpx solid $color-warning;
+  margin: $spacing-md 0;
+}
+
+.warnTitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-warning;
+  margin-bottom: $spacing-xs;
+  display: flex;
+  align-items: center;
+}
+
+.quickCopy {
+  display: inline-flex;
+  align-items: center;
+  padding: 4rpx $spacing-sm;
+  border-radius: $radius-xs;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 20rpx;
+  color: $color-text-white;
+  margin-left: $spacing-sm;
+}
+
+.navTabs {
+  display: flex;
+  gap: $spacing-sm;
+  overflow-x: auto;
+  padding: $spacing-sm 0 $spacing-md;
+  margin-bottom: $spacing-md;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.navTab {
+  flex-shrink: 0;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-button;
+  background: $color-bg-card;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  box-shadow: $shadow-card;
+}
+
+.navTabActive {
+  background: $color-primary;
+  color: $color-text-white;
+  font-weight: $font-weight-medium;
+}
+
+.algoBox {
+  padding: $spacing-md;
+  background: $color-bg-hover;
+  border-radius: $radius-md;
+  margin: $spacing-sm 0;
+}
+
+.algoStep {
+  color: $color-text-secondary;
+  font-size: 22rpx;
+  line-height: 2;
+  display: block;
+}
+
+.faqItem {
+  padding: $spacing-md 0;
+  border-bottom: 2rpx solid $color-divider;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.faqQuestion {
+  font-size: $font-size-md;
+  font-weight: 600;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+  display: block;
+}
+
+.faqIndex {
+  color: $color-primary;
+  margin-right: $spacing-xs;
+}
+
+.faqAnswer {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: 1.8;
+  padding-left: 44rpx;
+  display: block;
+}

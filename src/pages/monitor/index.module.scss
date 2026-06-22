@@ -1,0 +1,269 @@
+@use '@/styles/variables.scss' as *;
+
+.container {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: calc(140rpx + #{env(safe-area-inset-bottom)});
+}
+
+.header {
+  background: $header-gradient;
+  padding: $spacing-lg $spacing-lg $spacing-xl;
+  color: $color-text-white;
+}
+
+.headerTitle {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-sm;
+}
+
+.headerDesc {
+  font-size: $font-size-sm;
+  opacity: 0.85;
+  line-height: $line-height-normal;
+}
+
+.content {
+  margin-top: -$spacing-xl;
+  padding: 0 $spacing-lg;
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-card;
+  margin-bottom: $spacing-lg;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-md;
+}
+
+.cardTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  display: flex;
+  align-items: center;
+}
+
+.cardTitleDot {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background: $color-primary;
+  margin-right: $spacing-sm;
+}
+
+.cardTag {
+  font-size: $font-size-xs;
+  padding: 4rpx $spacing-sm;
+  border-radius: $radius-xs;
+  background: $color-primary-bg;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+}
+
+.warningTag {
+  background: $color-warning-bg;
+  color: $color-warning;
+}
+
+.errorTag {
+  background: $color-error-bg;
+  color: $color-error;
+}
+
+.chartWrap {
+  width: 100%;
+  height: 360rpx;
+}
+
+.rankList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.rankItem {
+  display: flex;
+  align-items: center;
+  padding: $spacing-md;
+  background: $color-bg-hover;
+  border-radius: $radius-md;
+  transition: all $transition-fast;
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+.rankBadge {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: $radius-sm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+  margin-right: $spacing-md;
+  flex-shrink: 0;
+}
+
+.rankBadge1 { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); }
+.rankBadge2 { background: linear-gradient(135deg, #C0C0C0 0%, #A9A9A9 100%); }
+.rankBadge3 { background: linear-gradient(135deg, #CD7F32 0%, #8B4513 100%); }
+.rankBadgeDefault { background: $color-border; color: $color-text-secondary; }
+
+.rankContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.rankName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+  @include text-ellipsis;
+}
+
+.rankSub {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.rankValue {
+  text-align: right;
+  margin-left: $spacing-md;
+  flex-shrink: 0;
+}
+
+.rankMainValue {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.rankMainValueAbnormal {
+  color: $color-error;
+}
+
+.rankSubValue {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-top: 2rpx;
+}
+
+.abnormalBadge {
+  display: inline-block;
+  font-size: $font-size-xs;
+  padding: 2rpx $spacing-xs;
+  border-radius: $radius-xs;
+  background: $color-error-bg;
+  color: $color-error;
+  font-weight: $font-weight-medium;
+  margin-left: $spacing-xs;
+}
+
+.errorApiList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.errorApiItem {
+  padding: $spacing-md;
+  background: $color-bg-hover;
+  border-radius: $radius-md;
+  border-left: 6rpx solid $color-error;
+}
+
+.errorApiTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: $spacing-sm;
+}
+
+.errorApiName {
+  flex: 1;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  @include text-ellipsis;
+  font-family: 'SF Mono', Monaco, Consolas, monospace;
+}
+
+.errorApiCount {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-error;
+  margin-left: $spacing-md;
+}
+
+.errorApiMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.errorApiMethod {
+  display: inline-block;
+  padding: 2rpx $spacing-xs;
+  border-radius: $radius-xs;
+  background: $color-secondary-bg;
+  color: $color-secondary;
+  font-weight: $font-weight-medium;
+  margin-right: $spacing-sm;
+  font-size: 20rpx;
+}
+
+.versionSelector {
+  display: flex;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-lg;
+  overflow-x: auto;
+  padding-bottom: $spacing-sm;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.versionChip {
+  flex-shrink: 0;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-button;
+  background: $color-bg-card;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  border: 2rpx solid transparent;
+  transition: all $transition-fast;
+  box-shadow: $shadow-card;
+}
+
+.versionChipActive {
+  background: $color-primary;
+  color: $color-text-white;
+  border-color: $color-primary;
+}

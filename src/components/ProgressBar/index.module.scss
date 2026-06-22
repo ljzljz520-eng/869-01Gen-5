@@ -1,0 +1,78 @@
+@use '@/styles/variables.scss' as *;
+
+.wrapper {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-sm;
+}
+
+.label {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  font-weight: $font-weight-medium;
+}
+
+.value {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+}
+
+.target {
+  color: $color-text-tertiary;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-xs;
+  margin-left: 4rpx;
+}
+
+.track {
+  position: relative;
+  width: 100%;
+  background-color: $color-bg-hover;
+  border-radius: $radius-round;
+  overflow: hidden;
+}
+
+.sm {
+  height: 8rpx;
+}
+
+.md {
+  height: 16rpx;
+}
+
+.lg {
+  height: 24rpx;
+}
+
+.fill {
+  position: relative;
+  height: 100%;
+  border-radius: $radius-round;
+  transition: width $transition-base ease;
+  overflow: hidden;
+}
+
+.shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+}
+
+.targetLine {
+  position: absolute;
+  top: -4rpx;
+  bottom: -4rpx;
+  width: 4rpx;
+  background-color: $color-text-tertiary;
+  border-radius: 2rpx;
+  transform: translateX(-50%);
+  z-index: 1;
+}

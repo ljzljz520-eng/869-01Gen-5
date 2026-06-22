@@ -1,0 +1,40 @@
+@use '@/styles/variables.scss' as *;
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  border: 1rpx solid;
+  border-radius: $radius-round;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.sm {
+  padding: 4rpx 16rpx;
+}
+
+.md {
+  padding: 8rpx 24rpx;
+}
+
+.dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: $radius-round;
+  margin-right: 12rpx;
+}
+
+.sm .dot {
+  width: 10rpx;
+  height: 10rpx;
+  margin-right: 8rpx;
+}
+
+.text {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  line-height: 1;
+}
+
+.sm .text {
+  font-size: 20rpx;
+}

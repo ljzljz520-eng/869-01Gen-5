@@ -1,0 +1,58 @@
+// ============================================
+// 主题配色变量 - 灰度性能监测系统
+// ============================================
+
+// 品牌主题色：科技蓝
+$color-primary: #165dff;
+$color-primary-light: #4080ff;
+$color-primary-dark: #0e42d2;
+$color-primary-bg: rgba(22, 93, 255, 0.08);
+
+// 辅助色：紫色（用于告警高亮）
+$color-secondary: #722ed1;
+$color-secondary-light: #9254de;
+$color-secondary-bg: rgba(114, 46, 209, 0.08);
+
+// 功能色
+$color-success: #00b42a;
+$color-success-light: #23c343;
+$color-success-bg: rgba(0, 180, 42, 0.08);
+
+$color-warning: #ff7d00;
+$color-warning-light: #ff9a2e;
+$color-warning-bg: rgba(255, 125, 0, 0.08);
+
+$color-error: #f53f3f;
+$color-error-light: #ff7875;
+$color-error-bg: rgba(245, 63, 63, 0.08);
+
+$color-info: #165dff;
+$color-info-light: #4080ff;
+$color-info-bg: rgba(22, 93, 255, 0.08);
+
+// 背景色
+$color-bg-page: #f5f6f7;
+$color-bg-card: #ffffff;
+$color-bg-hover: #f2f3f5;
+$color-bg-sidebar: #f7f8fa;
+
+// 文本色
+$color-text-primary: #1d2129;
+$color-text-secondary: #4e5969;
+$color-text-tertiary: #86909c;
+$color-text-disabled: #c9cdd4;
+$color-text-white: #ffffff;
+
+// 边框色
+$color-border: #e5e6eb;
+$color-divider: #f2f3f5;
+
+// 图表渐变色
+$chart-gradient-start: #165dff;
+$chart-gradient-end: #4080ff;
+$chart-gradient-success: linear-gradient(180deg, #00b42a 0%, #23c343 100%);
+$chart-gradient-warning: linear-gradient(180deg, #ff7d00 0%, #ff9a2e 100%);
+$chart-gradient-error: linear-gradient(180deg, #f53f3f 0%, #ff7875 100%);
+
+// 顶部渐变
+$header-gradient: linear-gradient(135deg, #165dff 0%, #4080ff 100%);

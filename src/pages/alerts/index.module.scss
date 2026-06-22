@@ -1,0 +1,157 @@
+@use '@/styles/variables.scss' as *;
+
+.container {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: calc(140rpx + #{env(safe-area-inset-bottom)});
+}
+
+.header {
+  background: $header-gradient;
+  padding: $spacing-lg $spacing-lg $spacing-xl;
+  color: $color-text-white;
+}
+
+.headerTitle {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-sm;
+}
+
+.headerDesc {
+  font-size: $font-size-sm;
+  opacity: 0.85;
+  line-height: $line-height-normal;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-sm;
+  margin-top: $spacing-lg;
+}
+
+.statItem {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: $radius-md;
+  padding: $spacing-md $spacing-sm;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.statValue {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  margin-bottom: 4rpx;
+}
+
+.statValueCritical { color: #FF4D4F; }
+.statValueError { color: #FF7D00; }
+.statValueWarning { color: #FFEC3D; }
+.statValueInfo { color: #FFFFFF; }
+
+.statLabel {
+  font-size: 20rpx;
+  opacity: 0.9;
+}
+
+.content {
+  margin-top: -$spacing-xl;
+  padding: 0 $spacing-lg;
+}
+
+.summaryCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+}
+
+.summaryCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  box-shadow: $shadow-card;
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.summaryIcon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: $radius-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-xxl;
+  flex-shrink: 0;
+}
+
+.summaryPending { background: $color-error-bg; }
+.summaryProcessing { background: $color-warning-bg; }
+.summaryResolved { background: $color-success-bg; }
+.summaryIgnored { background: $color-info-bg; }
+
+.summaryInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.summaryValue {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: 1.2;
+  margin-bottom: 4rpx;
+}
+
+.summaryLabel {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.batchActions {
+  display: flex;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+}
+
+.batchBtn {
+  flex: 1;
+  height: $button-height-sm;
+  border-radius: $radius-button;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transition: all $transition-fast;
+
+  &:active {
+    transform: scale(0.98);
+    opacity: 0.85;
+  }
+}
+
+.batchProcess {
+  background: $color-warning-bg;
+  color: $color-warning;
+}
+
+.batchResolve {
+  background: $color-success-bg;
+  color: $color-success;
+}
+
+.alertList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.emptyWrap {
+  padding: $spacing-xl * 2 0;
+}

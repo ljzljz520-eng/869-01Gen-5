@@ -1,0 +1,237 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background-color: $color-bg-page;
+  padding-bottom: calc(120rpx + #{env(safe-area-inset-bottom)});
+}
+
+.header {
+  background: $header-gradient;
+  padding: $spacing-xl $spacing-lg $spacing-2xl;
+  color: $color-text-white;
+  border-bottom-left-radius: 32rpx;
+  border-bottom-right-radius: 32rpx;
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-xl;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+}
+
+.greetingTitle {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-xs;
+}
+
+.greetingSubtitle {
+  font-size: $font-size-sm;
+  opacity: 0.85;
+}
+
+.docBtn {
+  @include button-reset;
+  height: 64rpx;
+  padding: 0 $spacing-md;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: $radius-button;
+  color: $color-text-white;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  backdrop-filter: blur(10rpx);
+  transition: all $transition-fast;
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(0.96);
+  }
+}
+
+.summaryCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+}
+
+.summaryCard {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10rpx);
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  border: 1rpx solid rgba(255, 255, 255, 0.2);
+}
+
+.summaryLabel {
+  font-size: $font-size-xs;
+  opacity: 0.85;
+  margin-bottom: 8rpx;
+  display: block;
+}
+
+.summaryValue {
+  font-size: 36rpx;
+  font-weight: $font-weight-bold;
+  display: block;
+  margin-bottom: 4rpx;
+}
+
+.summaryUnit {
+  font-size: $font-size-xs;
+  opacity: 0.7;
+}
+
+.content {
+  padding: 0 $spacing-lg;
+  margin-top: -48rpx;
+}
+
+.section {
+  background-color: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-card;
+  margin-bottom: $spacing-md;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-md;
+}
+
+.sectionTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.sectionTitleIcon {
+  font-size: $font-size-lg;
+}
+
+.sectionAction {
+  font-size: $font-size-xs;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+}
+
+.chartSection {
+  background-color: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-card;
+  margin-bottom: $spacing-md;
+}
+
+.quickActions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-md;
+}
+
+.quickAction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing-md 0;
+  transition: all $transition-fast;
+
+  &:active {
+    transform: scale(0.96);
+    opacity: 0.8;
+  }
+}
+
+.actionIcon {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: $radius-lg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  margin-bottom: $spacing-sm;
+}
+
+.actionIconBlue {
+  background-color: $color-primary-bg;
+}
+
+.actionIconGreen {
+  background-color: $color-success-bg;
+}
+
+.actionIconOrange {
+  background-color: $color-warning-bg;
+}
+
+.actionIconPurple {
+  background-color: $color-secondary-bg;
+}
+
+.actionLabel {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  font-weight: $font-weight-medium;
+}
+
+.versionListHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-md;
+}
+
+.createBtn {
+  @include button-reset;
+  height: 64rpx;
+  padding: 0 $spacing-md;
+  background-color: $color-primary;
+  color: $color-text-white;
+  border-radius: $radius-button;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  transition: all $transition-fast;
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+    background-color: $color-primary-dark;
+  }
+}
+
+.alertBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32rpx;
+  height: 32rpx;
+  padding: 0 10rpx;
+  background-color: $color-error;
+  color: $color-text-white;
+  border-radius: $radius-round;
+  font-size: 20rpx;
+  font-weight: $font-weight-bold;
+  margin-left: $spacing-xs;
+}

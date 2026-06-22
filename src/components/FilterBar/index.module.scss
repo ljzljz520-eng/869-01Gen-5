@@ -1,0 +1,62 @@
+@use '@/styles/variables.scss' as *;
+
+.wrapper {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.inner {
+  display: inline-flex;
+  gap: $spacing-sm;
+  padding: $spacing-sm 0;
+}
+
+.notScrollable {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  padding: $spacing-sm 0;
+}
+
+.filterItem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-button;
+  background-color: $color-bg-card;
+  border: 1rpx solid $color-border;
+  transition: all $transition-fast;
+  flex-shrink: 0;
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.sm {
+  padding: 8rpx 24rpx;
+}
+
+.md {
+  padding: 16rpx 32rpx;
+}
+
+.active {
+  background-color: $color-primary;
+  border-color: $color-primary;
+
+  .itemText {
+    color: $color-text-white;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.itemText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  white-space: nowrap;
+}
+
+.sm .itemText {
+  font-size: $font-size-xs;
+}

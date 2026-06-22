@@ -1,0 +1,11 @@
+@use '@/styles/variables.scss' as *;
+
+.chartContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.svgWrapper {
+  overflow: hidden;
+}

@@ -1,0 +1,143 @@
+@use '@/styles/variables.scss' as *;
+
+.card {
+  background-color: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-card;
+  margin-bottom: $spacing-md;
+  transition: all $transition-base;
+
+  &:active {
+    transform: scale(0.99);
+    box-shadow: $shadow-card-hover;
+  }
+}
+
+.compact {
+  padding: $spacing-md;
+}
+
+.header {
+  margin-bottom: $spacing-sm;
+}
+
+.versionInfo {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-xs;
+}
+
+.versionCode {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.versionName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.description {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: 1.5;
+  margin-bottom: $spacing-md;
+  @include text-ellipsis-multi(2);
+}
+
+.progressSection {
+  margin-bottom: $spacing-md;
+}
+
+.statsRow {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacing-md 0;
+  margin-bottom: $spacing-md;
+  border-top: 1rpx solid $color-divider;
+  border-bottom: 1rpx solid $color-divider;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.statValue {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: 4rpx;
+}
+
+.statLabel {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.errorText {
+  color: $color-error;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timeText {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.actionBtn {
+  @include button-reset;
+  height: 56rpx;
+  padding: 0 $spacing-md;
+  border-radius: $radius-button;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  transition: all $transition-fast;
+
+  &:active {
+    opacity: 0.85;
+    transform: scale(0.96);
+  }
+}
+
+.pauseBtn {
+  background-color: $color-warning-bg;
+  color: $color-warning;
+  border: 1rpx solid $color-warning;
+}
+
+.resumeBtn {
+  background-color: $color-success-bg;
+  color: $color-success;
+  border: 1rpx solid $color-success;
+}
+
+.blockedNotice {
+  display: flex;
+  align-items: center;
+  margin-top: $spacing-md;
+  padding: $spacing-sm $spacing-md;
+  background-color: $color-error-bg;
+  border-radius: $radius-sm;
+}
+
+.blockedIcon {
+  margin-right: $spacing-xs;
+  font-size: $font-size-sm;
+}
+
+.blockedText {
+  font-size: $font-size-xs;
+  color: $color-error;
+}

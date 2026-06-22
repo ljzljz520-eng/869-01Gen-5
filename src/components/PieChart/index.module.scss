@@ -1,0 +1,73 @@
+@use '@/styles/variables.scss' as *;
+
+.chartContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.svgWrapper {
+  overflow: hidden;
+}
+
+.legend {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  margin-top: $spacing-lg;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  padding: $spacing-sm;
+  border-radius: $radius-md;
+  background-color: $color-bg-hover;
+}
+
+.legendDot {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: $radius-xs;
+  margin-right: $spacing-md;
+  flex-shrink: 0;
+}
+
+.legendContent {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.legendLabel {
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+.legendValue {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.total {
+  margin-top: $spacing-lg;
+  text-align: center;
+}
+
+.totalLabel {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-bottom: $spacing-xs;
+}
+
+.totalValue {
+  display: block;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}

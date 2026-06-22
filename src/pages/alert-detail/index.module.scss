@@ -1,0 +1,417 @@
+@use '@/styles/variables.scss' as *;
+
+.container {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: calc(180rpx + #{env(safe-area-inset-bottom)});
+}
+
+.header {
+  padding: $spacing-lg $spacing-lg $spacing-xl;
+  color: $color-text-white;
+}
+
+.headerCritical { background: linear-gradient(135deg, #F53F3F 0%, #FF7875 100%); }
+.headerError { background: linear-gradient(135deg, #FF7D00 0%, #FF9A2E 100%); }
+.headerWarning { background: linear-gradient(135deg, #FFC53D 0%, #FFD666 100%); }
+.headerInfo { background: $header-gradient; }
+
+.alertLevelBadge {
+  display: inline-block;
+  padding: 4rpx $spacing-sm;
+  border-radius: $radius-xs;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: $font-size-xs;
+  margin-bottom: $spacing-md;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 2rpx;
+}
+
+.alertTitle {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-sm;
+  line-height: 1.3;
+}
+
+.alertDesc {
+  font-size: $font-size-sm;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.content {
+  margin-top: -$spacing-xl;
+  padding: 0 $spacing-lg;
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-card;
+  margin-bottom: $spacing-lg;
+}
+
+.cardTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+  display: flex;
+  align-items: center;
+}
+
+.cardTitleIcon {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background: $color-primary;
+  margin-right: $spacing-sm;
+}
+
+.infoRow {
+  display: flex;
+  padding: $spacing-sm 0;
+  border-bottom: 2rpx solid $color-divider;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.infoLabel {
+  width: 180rpx;
+  flex-shrink: 0;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  line-height: 1.5;
+}
+
+.infoValue {
+  flex: 1;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  line-height: 1.5;
+  font-weight: $font-weight-medium;
+}
+
+.infoValueMono {
+  font-family: 'SF Mono', Monaco, Consolas, monospace;
+  font-size: 22rpx;
+}
+
+.thresholdBox {
+  display: flex;
+  align-items: stretch;
+  gap: $spacing-md;
+}
+
+.thresholdItem {
+  flex: 1;
+  padding: $spacing-md;
+  border-radius: $radius-md;
+  text-align: center;
+}
+
+.thresholdItemActual {
+  background: $color-error-bg;
+  border: 2rpx solid $color-error;
+}
+
+.thresholdItemLimit {
+  background: $color-bg-hover;
+}
+
+.thresholdValue {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  margin-bottom: $spacing-xs;
+}
+
+.thresholdValueAlert {
+  color: $color-error;
+}
+
+.thresholdLabel {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.affectedChart {
+  width: 100%;
+  height: 280rpx;
+}
+
+.deviceList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.deviceItem {
+  display: flex;
+  align-items: center;
+  padding: $spacing-md;
+  background: $color-bg-hover;
+  border-radius: $radius-md;
+}
+
+.deviceRank {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: $radius-sm;
+  background: $color-error-bg;
+  color: $color-error;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-md;
+  margin-right: $spacing-md;
+  flex-shrink: 0;
+}
+
+.deviceInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.deviceName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  margin-bottom: 4rpx;
+  @include text-ellipsis;
+}
+
+.deviceMeta {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  display: flex;
+  gap: $spacing-md;
+}
+
+.deviceValue {
+  text-align: right;
+  margin-left: $spacing-md;
+  flex-shrink: 0;
+}
+
+.deviceMainValue {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-error;
+}
+
+.deviceSubValue {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-top: 2rpx;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 40rpx;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 14rpx;
+  top: 8rpx;
+  bottom: 8rpx;
+  width: 4rpx;
+  background: $color-border;
+  border-radius: 2rpx;
+}
+
+.timelineItem {
+  position: relative;
+  padding-bottom: $spacing-lg;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.timelineDot {
+  position: absolute;
+  left: -40rpx;
+  top: 4rpx;
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  background: $color-primary;
+  border: 6rpx solid $color-bg-card;
+  box-shadow: 0 0 0 4rpx $color-primary-bg;
+}
+
+.timelineDotSuccess {
+  background: $color-success;
+  box-shadow: 0 0 0 4rpx $color-success-bg;
+}
+
+.timelineDotWarning {
+  background: $color-warning;
+  box-shadow: 0 0 0 4rpx $color-warning-bg;
+}
+
+.timelineDotError {
+  background: $color-error;
+  box-shadow: 0 0 0 4rpx $color-error-bg;
+}
+
+.timelineContent {
+  padding: $spacing-md;
+  background: $color-bg-hover;
+  border-radius: $radius-md;
+}
+
+.timelineTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.timelineTime {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-bottom: $spacing-sm;
+}
+
+.timelineDesc {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: 1.6;
+}
+
+.timelineOperator {
+  display: inline-block;
+  padding: 2rpx $spacing-xs;
+  border-radius: $radius-xs;
+  background: $color-primary-bg;
+  color: $color-primary;
+  font-size: 20rpx;
+  margin-right: $spacing-xs;
+}
+
+.handleInput {
+  width: 100%;
+  min-height: 160rpx;
+  background: $color-bg-hover;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  box-sizing: border-box;
+  line-height: 1.6;
+  margin-bottom: $spacing-md;
+}
+
+.handleCount {
+  text-align: right;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-top: -$spacing-sm;
+  margin-bottom: $spacing-md;
+}
+
+.suggestList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+}
+
+.suggestBtn {
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-button;
+  background: $color-bg-hover;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  border: 2rpx solid $color-border;
+}
+
+.actionBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: $spacing-md $spacing-lg;
+  padding-bottom: calc(#{$spacing-md} + #{env(safe-area-inset-bottom)});
+  background: $color-bg-card;
+  box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.08);
+  display: flex;
+  gap: $spacing-md;
+}
+
+.actionBtn {
+  flex: 1;
+  height: $button-height-lg;
+  border-radius: $radius-button;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transition: all $transition-fast;
+
+  &:active {
+    transform: scale(0.98);
+    opacity: 0.85;
+  }
+}
+
+.btnPrimary { background: $color-primary; color: $color-text-white; }
+.btnSuccess { background: $color-success; color: $color-text-white; }
+.btnOutline { background: $color-bg-card; color: $color-text-secondary; border: 2rpx solid $color-border; }
+
+.quickLink {
+  display: flex;
+  align-items: center;
+  padding: $spacing-md;
+  background: $color-primary-bg;
+  border-radius: $radius-md;
+  border: 2rpx solid $color-primary;
+  margin-bottom: $spacing-md;
+}
+
+.quickLinkIcon {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: $radius-md;
+  background: $color-primary;
+  color: $color-text-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-xxl;
+  margin-right: $spacing-md;
+  flex-shrink: 0;
+}
+
+.quickLinkContent { flex: 1; }
+
+.quickLinkTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  margin-bottom: 4rpx;
+}
+
+.quickLinkDesc {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  line-height: 1.4;
+}
+
+.quickLinkArrow {
+  color: $color-primary;
+  font-size: $font-size-lg;
+  margin-left: $spacing-md;
+}
